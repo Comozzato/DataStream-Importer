@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/../../vendor/autoload.php';
-use App\Server;
+require_once __DIR__ . '/../App/Bootstrap.php';
+require_once __DIR__ . '/../App/Core/Route.php';
 
-$server = new Server();
-$server->start();

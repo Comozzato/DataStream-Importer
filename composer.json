@@ -1,15 +1,24 @@
 {
     "autoload": {
         "psr-4": {
-            "App\\": "src/*/"
+            "App\\": "src\\App"
         }
     },
+    "authors": [
+        {
+            "name": "Wille Comozzato",
+            "email": "dev.willeferreira@gmail.com"
+        }
+    ],
     "scripts": {
-        "server": "php src/public/index.php",
+        "server": "php -S 0.0.0.0:9000 -t src\\public",
         "lint": "phpcs -p --standard=PSR12 src",
         "fix": "phpcbf --standard=PSR12 src"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "*"
+    },
+    "require": {
+        "duoshuo/php-cassandra": "^0.5.2"
     }
 }
