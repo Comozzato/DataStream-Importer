@@ -64,9 +64,20 @@ class Route
             }
 
             // executa o método do controller
-            $controllerInstance->$action((object)$_REQUEST);
+            $response = $controllerInstance->$action((object)$_REQUEST);
+
+            // Se o controller retornou algo, mostrar
+            if ($response !== null) {
+                if (is_array($response) || is_object($response)) {
+                    header('Content-Type: application/json');
+                    echo json_encode($response, JSON_PRETTY_PRINT);
+                } else {
+                    echo $response;
+                }
+            }
         } catch (Exception $e) {
-            echo $e->getMessage();
+            http_response_code(500);
+            echo "Erro interno do servidor: " . $e->getMessage();
         }
     }
 }

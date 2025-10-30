@@ -11,7 +11,7 @@
         }
     ],
     "scripts": {
-        "server": "php -S 0.0.0.0:9000 -t src\\public",
+        "server": "php -S 0.0.0.0:9000 -t src/public",
         "lint": "phpcs -p --standard=PSR12 src",
         "fix": "phpcbf --standard=PSR12 src"
     },
