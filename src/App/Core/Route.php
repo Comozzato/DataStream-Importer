@@ -63,10 +63,8 @@ class Route
                 throw new Exception("O método {$action} não existe no controller {$controllerClass}.");
             }
 
-            // executa o método do controller
             $response = $controllerInstance->$action((object)$_REQUEST);
 
-            // Se o controller retornou algo, mostrar
             if ($response !== null) {
                 if (is_array($response) || is_object($response)) {
                     header('Content-Type: application/json');

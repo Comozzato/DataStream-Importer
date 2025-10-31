@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Users;
+namespace App\Modules\Users;
 
 use App\Container;
 

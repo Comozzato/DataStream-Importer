@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Users;
-
+namespace App\Modules\Users;
 
 class UserController
 {
@@ -14,7 +13,7 @@ class UserController
         $this->userRepository = new UserRepository();
     }
     public function listUsers()
-    {
+    {   
         return $this->userRepository->listUsers();
     }
 }

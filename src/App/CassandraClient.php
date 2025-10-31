@@ -15,10 +15,10 @@ class CassandraClient
         if (self::$connection === null) {
             try {
                 self::$connection = new Cassandra\Connection(
-                    ['127.0.0.1'], // lista de hosts
-                    'teste',       // keyspace
+                    [config('app.cassandra.host')], // lista de hosts
+                    config('app.cassandra.keyspace'),       // keyspace
                     [
-                        'port' => 9042,
+                        'port' => config('app.cassandra.port'),
                     ]
                 );
             } catch (Cassandra\Exception $e) {

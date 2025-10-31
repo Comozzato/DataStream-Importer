@@ -2,7 +2,7 @@
 
 use App\Core\Route;
 use App\Home\HomeController;
-use App\Users\UserController;
+use App\Modules\Users\UserController;
 
 Route::get('/users', [UserController::class, 'listUsers']);
 
